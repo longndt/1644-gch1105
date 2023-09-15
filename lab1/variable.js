@@ -22,6 +22,10 @@ console.log(n)
 const PI = 3.14
 console.log(PI)
 
+//cách 5: sử dụng "$"
+$n = 50
+console.log("n = " + $n)
+
 a = 1
 b = 3
 c = a + b
@@ -36,8 +40,8 @@ console.log(x/y)
 console.log(x%y)
 
 a = 10
-b = a++     //b=a=10 -> a++=a+1=10+1=11
-c = ++a     //++a=a+1=11+1=12 -> c=a=12
-console.log("a = " + a)  //12
-console.log("b = " + b)  //10
-console.log("c = " + c)  //12
+b = a++                    //b=a=10 -> a++=a+1=10+1=11
+c = ++a                    //++a=a+1=11+1=12 -> c=a=12
+console.log("a = " + a)    //12
+console.log("b = " + b)    //10
+console.log("c = " + c)    //12
