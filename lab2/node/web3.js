@@ -1,6 +1,9 @@
 const http = require('http')
 const fs = require('fs')
-const port = 3000
+
+//config port for web deployment
+const port = process.env.PORT||3000
+
 const server = http.createServer((req, res) => {
    if (req.url === '/') {
       fs.readFile('index.html', (err, data) => {
