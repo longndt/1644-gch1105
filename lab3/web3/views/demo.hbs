@@ -1,0 +1,32 @@
+We are living in {{ nam }}
+<br>
+<!-- hbs -->
+{{ country }} is a beautiful country
+<br>
+I am studying at {{ university }}
+<br>
+My GPA: {{ gpa }}
+<br>
+Music genre:
+<br>
+<ul style="list-style-type: circle">
+   <!-- heach : foreach loop -->
+   {{#each music}}
+   <li>{{this}}</li>
+   {{/each}}
+</ul>
+<ol type="A">
+   {{#each movie}}
+   <li>{{this}}</li>
+   {{/each}}
+</ol>
+<table class="table table-bordered">
+   <tr>
+      <th>Country</th>
+   </tr>
+   {{#each country }}
+   <tr>
+      <td>{{ this }}</td>
+   </tr>
+   {{/each}}
+</table>
