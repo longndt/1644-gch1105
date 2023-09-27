@@ -1,0 +1,22 @@
+<form action="/employee" method="post" class="card bg-warning p-4">
+   <h1 class="text text-danger text-center mt-3">Add new employee</h1>
+   <label for="" class="h5 text text-primary">Name</label>
+   <input class="form-control" type="text" name="name" required>
+   <label for="" class="h5 text text-primary mt-3">Birthday</label>
+   <input class="form-control" type="date" name="birthday" id="">
+   <label for="" class="h5 text text-primary mt-3">Gender</label>
+   <input type="radio" name="gender" value="Male"> Male
+   <input type="radio" name="gender" value="Female"> Female
+   <label for="" class="h5 text text-primary mt-3">Position</label>
+   <select class="form-control" name="position" id="">
+      <option value="Director">Director</option>
+      <option value="Manager">Manager</option>
+      <option value="Staff">Staff</option>
+      <option value="Security">Security</option>
+   </select>
+   <label for="" class="h5 text text-primary mt-3">Email</label>
+   <input class="form-control" type="email" name="email" id="">
+   <label for="" class="h5 text text-primary mt-3">Introduction</label>
+   <textarea class="form-control" name="introduction" id="" cols="20" rows="10"></textarea>
+   <input class="btn btn-info mt-3" type="submit" value="Add">
+</form>

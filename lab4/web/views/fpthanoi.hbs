@@ -1,3 +1,18 @@
+<table border="1"> 
+   <tr>
+      <th>Country</th>
+      <th>Capital</th>
+   </tr>
+   <!-- heach => TAB -->
+   {{#each capital }}
+      <tr>
+         <td>{{this.[0]}}</td>  <!-- 0: column 1 (country) -->
+         <td>{{this.[1]}}</td>  <!-- 1: column 2 (capital) -->
+      </tr>
+   {{/each}}
+</table>
+
+
 <h1>{{ fpt }}</h1>
 <h2>2 Pham Van Bach - Cau Giay - Ha Noi</h2>
 <h3>We are living in {{ year}}</h3>
@@ -18,8 +33,6 @@
          </th>
       </tr>
    {{/each}}
-  
 </table>
-
 <a href="/">Homepage</a>
 
