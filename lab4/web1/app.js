@@ -11,6 +11,11 @@ var employeeRouter = require('./routes/employee');
 
 var app = express();
 
+//khai báo thư viện dateFormat của hbs
+var hbs = require('hbs');
+hbs.registerHelper('dateFormat', require('handlebars-dateformat')); 
+
+
 //import & config thư viện body-parser (lấy dữ liệu từ form)
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -45,5 +50,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//cấu hình port của server để deploy lên Render
+app.listen(process.env.PORT || 3001);
 
 module.exports = app;
