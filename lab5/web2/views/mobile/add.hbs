@@ -1,0 +1,41 @@
+<div class="container text-center col-md-8">
+   <form action="/mobile/view" method="post" class="card bg-info-subtle p-3 text-center">
+      <h1 class="text text-danger text-uppercase">Add new mobile</h1>
+      <div class="form-group mt-3">
+         <label for="" class="h5 text text-bg-success">Brand</label>
+         <select class="form-control" name="brand" id="" required>
+            <option value="">Select 1 brand</option>
+            <option value="iPhone">iPhone</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Oppo">Oppo</option>
+            <option value="Xiaomi">Xiaomi</option>
+         </select>
+      </div>
+      <div class="form-group mt-3">
+         <label for="" class="h5 text text-bg-primary">Model</label>
+         <input class="form-control" type="text" name="model" placeholder="Enter mobile's model" required>
+      </div>
+      <div class="form-group mt-3">
+         <label for="" class="h5 text text-bg-warning">Price</label>
+         <input class="form-control" type="text" name="price" placeholder="Enter mobile's price" required>
+      </div>
+      <div class="form-group mt-3">
+         <label for="" class="h5 text text-bg-danger">Quantity</label>
+         <input class="form-control" type="number" name="quantity" placeholder="Enter mobile's quantity" min="1"
+            max="100" required>
+      </div>
+      <div class="form-group mt-3">
+         <label for="" class="h5 text text-bg-info">Type</label><br>
+         <input type="radio" name="type" id="" value="normal"> Normal
+         <input type="radio" name="type" id="" value="fold"> Fold
+      </div>
+      <div class="form-group mt-3">
+         <label for="" class="h5 text text-bg-secondary">Image</label>
+         <input class="form-control" type="url" name="image" id="" required>
+      </div>
+      <div class="form-group mt-3">
+         <input class="btn btn-primary" type="submit" value="Add">
+         <input class="btn btn-warning" type="reset" value="Clear">
+      </div>
+   </form>
+</div>
