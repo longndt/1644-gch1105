@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#phone:hover {
+  opacity: 50%;
+  border: 3px dashed red;
+}
+
+#phone {
+  opacity: 100%;
+}

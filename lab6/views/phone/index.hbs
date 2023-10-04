@@ -1,0 +1,32 @@
+<table class="table table-danger">
+   <tr>
+      <th colspan="3" class="text text-center text-uppercase h1">
+         Phone List</th>
+      <th>
+         <a href="#" class="btn btn-primary">Add</a>
+      </th>
+   </tr>
+   <tr>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Image</th>
+      <th>Menu</th>
+   </tr>
+   {{#each phoneList }}
+   <tr>
+      <td>{{ brand }} </td>
+      <td>{{ model }}</td>
+      <td>
+         <a href="/phone/detail/{{_id}}">
+            <img src="{{ image }}" width="100" height="120">
+         </a> 
+      </td>
+      <td>
+         <a class="btn btn-warning" href="#">Edit</a>
+         <a class="btn btn-danger" href="#"
+         onclick="return confirm('Are you sure to delete this phone ?');"
+         >Delete</a>
+      </td>
+   </tr>
+   {{/each}}
+</table>
