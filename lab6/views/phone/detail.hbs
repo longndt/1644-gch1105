@@ -3,19 +3,22 @@
    <div class="row">
       <div class="col text-center">
          <img src="{{ phone.image }}" alt="" width="300" height="400">
-         <h5 class="text text-bg-success">{{ phone.model }}</h5>
       </div>
       <div class="col">
          <h4 class="text text-bg-primary text-center text-uppercase">Phone Information</h4>
          <h5>Brand: {{ phone.brand }}</h5>
          <h5>Model: {{ phone.model }}</h5>
          <h5>Price: {{ phone.price }} USD </h5>
-         <h5>Stock: {{ phone.quantity }}</h5> 
-         <form action="/phone/cart" method="post">
-            <input class="form-control" type="number" name="quantity" min="1" max="{{ phone.quantity }}">
-            <input type="hidden" name="id" value="{{phone._id}}">
-            <input class="btn btn-danger" type="submit" value="Add to cart">
-         </form>
+         {{#if (gt phone.quantity 0) }}
+               <form action="/phone/cart" method="post">
+                  <input class="form-control" type="number" name="quantity" min="1" max="{{ phone.quantity }}">
+                  <input type="hidden" name="id" value="{{phone._id}}">
+                  <input class="btn btn-danger" type="submit" value="Add to cart">
+               </form>
+         {{else}}
+            <h2 class="text text-danger">Out of stock</h2>
+         {{/if}}
+    /* codew */
       </div>
    </div>
 </div>

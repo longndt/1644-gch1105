@@ -11,6 +11,21 @@ var phoneRouter = require('./routes/phone');
 
 var app = express();
 
+//khai báo thư viện hbs
+var hbs = require('hbs')
+//tạo helper cho hbs
+hbs.registerHelper('eq', function(a, b) {
+    return a === b;
+});
+
+hbs.registerHelper('gt', function(a, b) {
+    return a > b;
+});
+
+hbs.registerHelper('lt', function(a, b) {
+    return a < b;
+});
+
 //khai báo và cấu hình thư viện mongoose để kết nối với db
 var mongoose = require('mongoose');
 var uri = 'mongodb+srv://longndt:xOrkDHZXS3XtG2bb@cluster0.ary1nxp.mongodb.net/demo';
