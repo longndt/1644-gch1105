@@ -11,9 +11,11 @@ var studentRouter = require('./routes/student');
 
 var app = express();
 
-//khai báo và cấu hình thư viện dateFormat cho hbs
+//khai báo và cấu hình thư viện dateFormat, equal cho hbs
 var hbs = require('hbs');
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
+hbs.registerHelper('equal', require('handlebars-helper-equal'))
+
 
 //khai báo & cấu hình body-parser
 var bodyParser = require('body-parser');
