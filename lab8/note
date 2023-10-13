@@ -1,0 +1,17 @@
+//search function
+router.post('/search', async (req, res) => {
+   var keyword = req.body.name;
+   var students = await StudentModel.find({ name: new RegExp(keyword, "i") })
+   res.render('student/index', { students: students })
+})
+
+//sort function
+router.get('/sortasc', async (req, res) => {
+   var students = await StudentModel.find().sort({ name: 1 })
+   res.render('student/index', { students: students })
+})
+
+router.get('/sortdesc', async (req, res) => {
+   var students = await StudentModel.find().sort({ name: -1 })
+   res.render('student/index', { students: students })
+})
