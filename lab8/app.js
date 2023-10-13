@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var mongoose = require('mongoose');
 //Note: cần khai báo tên db ở cuối uri của connection string
 var uri = "mongodb+srv://longndt:xOrkDHZXS3XtG2bb@cluster0.ary1nxp.mongodb.net/gch1105";
+//disable mongoose warning in terminal
 mongoose.set('strictQuery', true);
 mongoose.connect(uri)
   .then(() => console.log('connect to db ok'))
