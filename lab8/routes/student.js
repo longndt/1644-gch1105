@@ -51,4 +51,22 @@ router.post('/edit/:id', async (req, res) => {
    res.redirect('/student');
 })
 
+router.post('/search', async (req, res) => {
+   var keyword = req.body.name;
+   //relative search
+   var students = await StudentModel.find({ name: new RegExp(keyword, "i") });
+   res.render('student/index', { students: students });
+})
+
+router.get('/nameasc', async (req, res) => {
+   //1: ascending,  -1: descending
+   var students = await StudentModel.find().sort({ name: 1 });
+   res.render('student/index', { students: students });
+})
+
+router.get('/namedesc', async (req, res) => {
+   var students = await StudentModel.find().sort({ name: -1 });
+   res.render('student/index', { students: students });
+})
+
 module.exports = router;
