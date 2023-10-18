@@ -5,21 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-//khai báo router
-var studentRouter = require('./routes/student');
 
 var app = express();
-
-//khai báo và cấu hình thư viện dateFormat, equal cho hbs
-var hbs = require('hbs');
-hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
-hbs.registerHelper('equal', require('handlebars-helper-equal'))
-
-
-//khai báo & cấu hình body-parser
-var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
 
 //khai báo & cấu hình mongoose
 var mongoose = require('mongoose');
@@ -29,8 +16,11 @@ var uri = "mongodb+srv://longndt:xOrkDHZXS3XtG2bb@cluster0.ary1nxp.mongodb.net/g
 mongoose.set('strictQuery', true);
 mongoose.connect(uri)
   .then(() => console.log('connect to db ok'))
-  .catch((err) => console.log('connect to db error'));
+  .catch((err) => console.log('connect to db error ' + err));
 
+//khai báo & cấu hình cors (để chia sẻ API với frontend)
+var cors = require('cors');
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,8 +33,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/student', studentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -63,6 +51,6 @@ app.use(function (err, req, res, next) {
 });
 
 // cấu hình port của server để deploy lên cloud
-app.listen(process.env.PORT || 4000);
+app.listen(process.env.PORT || 5000);
 
 module.exports = app;
