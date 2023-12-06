@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 // Khai báo URL của back-end side
-const baseURL = "http://localhost:5000/";
+const baseURL = "http://localhost:5000/edo";
 
 const Student = () => {
   const [data, setData] = useState([]);
